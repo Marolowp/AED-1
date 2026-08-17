@@ -25,7 +25,7 @@ int main(){
 
     int* result = twoSum(nums, numsSize, target, returnSize);
     
-    if(result != NULL){
+    if (result != NULL){
         printf("%d, %d", result[0], result[1]);
         free(result);
     }
