@@ -7,7 +7,7 @@ bool isPossibleToSplit(int* nums, int numsSize) {
     for (int i = 0; i < numsSize; i++){
         aux = nums[i];
         counter = 0;
-        for (int j = 1; j < numsSize; j++){
+        for (int j = i + 1; j < numsSize; j++){
             if (aux == nums[j]){
                 counter++;
             } 
