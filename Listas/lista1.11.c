@@ -4,10 +4,17 @@
 int* concatenar (int* v1, int v1Size, int* v2, int v2Size, int *n3){
     *n3 = v1Size + v2Size;
     int* v3 = (int*)malloc(sizeof(int) * *n3);
+
+    if (v3 == NULL){
+        printf("Erro ao alocar memoria");
+        free(v3);
+        exit(1);
+    }
     for (int i = 0; i < *n3; i++){
         if (i < v1Size) v3[i] = v1[i];
-        if (i < v1Size + v2Size) v3[i] = v2[i];
+        else v3[i] = v2[i - v2Size];
     }
+    return v3;
 }
 
 int* montar_vetor (int* tamanho){
@@ -21,7 +28,6 @@ int* montar_vetor (int* tamanho){
 
         if (input == -1) break;
 
-        
         int *temp = realloc(v, sizeof(int) * (count + 1));
         if (temp == NULL) {
             printf("Erro ao alocar memoria.\n");
@@ -34,7 +40,7 @@ int* montar_vetor (int* tamanho){
         count++;
     }
 
-    printf("\nVetor 1 montado\n");
+    printf("\nVetor montado\n");
     *tamanho = count; 
     return v;
 }
@@ -51,16 +57,10 @@ int main(){
 
     int* v3 = concatenar(v1, tamanho1, v2, tamanho2, &tamanho3);
     for (int i = 0; i < tamanho3; i++){
-        printf("%d", v3[i]);
-    }
-    
-    /*int v2Size = count;
-    int* v3Size = NULL; 
-
-    int* v3 = concatenar(v1, &v1Size, v2, &v2Size, v3Size);
-
-    for (int i = 0; i < v3Size; i++){
         printf("%d ", v3[i]);
     }
-    */
+
+    free(v1);
+    free(v2);
+    free(v3);
 }
