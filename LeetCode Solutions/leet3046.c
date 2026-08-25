@@ -6,12 +6,12 @@ bool isPossibleToSplit(int* nums, int numsSize) {
     int aux = 0;
     for (int i = 0; i < numsSize; i++){
         aux = nums[i];
-        counter = 0;
+        counter = 1;
         for (int j = i + 1; j < numsSize; j++){
             if (aux == nums[j]){
                 counter++;
             } 
-            if (counter >= 2){
+            if (counter > 2){
               return false;  
             } 
         }
