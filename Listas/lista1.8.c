@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 void min_max(int *v, int n, int *pmax, int *pmin){
-    *pmax = 1;
-    *pmin = 1000000;
+    *pmax = v[0];
+    *pmin = v[0];
 
     for (int i = 0; i < n; i++){
         int aux = v[i];
@@ -18,10 +18,10 @@ void min_max(int *v, int n, int *pmax, int *pmin){
 int main(){
     int v[6] = {0,1,2,3,4,5};
     int n = 6;
-    int *pmax = NULL;
-    int *pmin = NULL;
+    int pmax;
+    int pmin;
 
-    min_max(v, n, pmax, pmin);
+    min_max(v, n, &pmax, &pmin);
     
-    printf("%d %d", *pmax, *pmin);
+    printf("%d %d", pmax, pmin);
 }

@@ -4,7 +4,7 @@
 int* copia_vetor (int *v, int n){
     int* novov = (int*)malloc(sizeof(int) * n);
     for (int i = 0; i < n; i++){
-        v[i] = novov[i];
+        novov[i] = v[i];
     }
     return novov;
 }
@@ -17,6 +17,6 @@ int main(){
     
     for(int i = 0; i < n; i++){
         result[i] = copia_vetor(&v[i], n);
-        printf("%d ", result[i]);
+        printf("%d ", *result[i]);
     }
 }
