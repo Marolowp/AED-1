@@ -1,5 +1,5 @@
-```markdown
 # 🧩 LeetCode Solutions
+```markdown
 
 Este diretório reúne minhas **soluções autorais** para problemas e desafios variados da plataforma [LeetCode](https://leetcode.com/).
 
