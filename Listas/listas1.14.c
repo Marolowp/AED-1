@@ -1,6 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int* intercalar (int *v1, int *v2, int n, int* n3){
+    *n3 = n*2;
+    int tamv3 = *n3;
+
+    int indicev1 = 0;
+    int indicev2 = 0;
+    int indicev3 = 0;
+    int *v = (int*)malloc(sizeof(int) * tamv3);
+
+    while (tamv3 != indicev3){
+        if (indicev3 % 2 == 0){
+            v[indicev3] = v1[indicev1];
+            indicev1++;
+            indicev3++;
+        }
+        else{
+            v[indicev3] = v2[indicev2];
+            indicev2++;
+            indicev3++;
+        }
+    }
+
+    return v;
+}
+
 int* montar_vetor(int *tam){
     int counter = 0;
     int valor = 0;
@@ -61,6 +86,17 @@ int main(){
     int* v1 = montar_vetor(&tam);
     int* v2 = montar_vetor(&tam);
 
+    int n3 = 0;
+    int* v3 = intercalar(v1, v2, tam, &n3);
+
+    for (int i = 0; i < n3; i++){
+        printf("%d ", v3[i]);
+    }
+
     free(v1);
     free(v2);
+    free(v3);
+
+
+
 }
