@@ -74,7 +74,7 @@ int* montar_vetor(int *tam){
             v[i] = valor;
         } 
 
-        printf("Vetor 2 montado.");
+        printf("Vetor 2 montado.\n");
 
         return v;
     }    
@@ -96,7 +96,4 @@ int main(){
     free(v1);
     free(v2);
     free(v3);
-
-
-
 }
