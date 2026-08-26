@@ -30,3 +30,7 @@ Para clonar e testar os programas localmente em sua máquina:
 1. **Clone o repositório:**
    ```bash
    git clone [https://github.com/Marolowp/AED-1.git](https://github.com/Marolowp/AED-1.git)
+
+👤 Autor
+
+Desenvolvido por Marcos Cardoso (@Marolowp).
