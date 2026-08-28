@@ -1,0 +1,30 @@
+Exercício 1. Para cada trecho de código abaixo, escreva a equação T(n) contando as
+operações básicas e simplifique para a notação O.
+a)
+int soma = 0;
+for (int i = 0; i < n; i++) {
+soma += i;
+}
+printf("%d", soma);
+
+T(n) = 1 + 1 + (n+1) + n + n + 1
+O = O(n)
+
+b)
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        printf("%d %d\n", i, j);
+    }
+}
+
+T(n) = 1 + (n+1) + n + n (n^2) + (n+1) + (n+1) + n*n
+O = O(n^2)
+
+c)
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < 10; j++) {
+        printf("%d\n", i * j);
+    }
+}
+
+T(n) = 1 + (n+1) + n + (11) + 10 +  
