@@ -45,9 +45,17 @@ void personagem_status(Personagem *p){
     if (p == NULL) return;
 
     printf("------STATUS DO PERSONAGEM------\n");
-    printf("Nome: %s\n"p->nome);
+    printf("Nome: %s\n", p->nome);
     printf("Vida: %d\n", p->vida);
     printf("Pontos de ataque: %d\n", p->pataque);
     printf("Estado: %s\n", personagem_vivo(p) ? "Vivo" : "Morto");
     printf("--------------------------------\n");
+}
+
+void personagem_libera(Personagem *p){
+    free(p);
+}
+
+void personagem_atacar(Personagem* atacante, Personagem *alvo){
+    
 }
