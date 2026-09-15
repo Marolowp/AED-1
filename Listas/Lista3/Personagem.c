@@ -13,7 +13,7 @@ Personagem *personagem_cria(char *nome){
     Personagem* personagem = (Personagem*)malloc(sizeof(Personagem));
     if (personagem == NULL) return NULL;
 
-    personagem->nome = (char *)malloc(sizeof((strlen(nome) + 1) * sizeof(char))); //alloc dinamica de nome
+    personagem->nome = (char *)malloc((strlen(nome) + 1) * sizeof(char)); //alloc dinamica de nome
     if (personagem->nome != NULL){
         strcpy(personagem->nome, nome);
     }
@@ -53,9 +53,30 @@ void personagem_status(Personagem *p){
 }
 
 void personagem_libera(Personagem *p){
+    if(p != NULL){
+        if(p->nome != NULL){
+            free(p->nome);
+        }
+    }
     free(p);
 }
 
 void personagem_atacar(Personagem* atacante, Personagem *alvo){
+    if (atacante == NULL || alvo == NULL){
+        return;
+    }
     
+    if (!personagem_vivo(atacante)){
+        printf("O atancante está morto.");
+    }
+
+    if(!personagem_vivo(alvo)){
+        printf("O alvo ja está morto");
+    }
+
+    alvo->vida -= atacante->pataque;
+
+    if (alvo->vida < 0) alvo->vida = 0;
+
+    printf("%s atacou %s causando %d de dano", atacante->nome, alvo->nome, atacante->pataque);
 }
