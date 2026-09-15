@@ -2,7 +2,7 @@
 #include "Personagem.h"
 
 int main(){
-    Personagem *heroi = personagem_cria("Geralt");
+    Personagem *heroi = personagem_cria("Geraldo");
     Personagem *monstro = personagem_cria("Goblin");
 
     personagem_status(heroi);
