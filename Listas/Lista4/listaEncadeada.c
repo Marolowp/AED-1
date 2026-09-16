@@ -2,15 +2,15 @@
 #include <stdlib.h>
 #include "listaEncadeada.h"
 
-Head *criaLista(Dados produto){
-    Nodo *sentinela = malloc(sizeof(Dados));
-
-    if (sentinela == NULL){
-        printf("Não foi possível alocar memoria");
+Head *criaLista(){
+    Head *p = (Head*)malloc(sizeof(Head));
+    if (p == NULL){
+        free(p);
         exit(1);
     }
-    sentinela->info = produto;
-    sentinela->prox = NULL;
+    p->pFirst = NULL;
+
+    return p;
 
 }
 
