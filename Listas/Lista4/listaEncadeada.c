@@ -131,3 +131,14 @@ int buscar(Head *lista, int cod, Dados *resultado){
 
     return 1;
 }
+
+//Exercio 2
+int contar(Head *lista){
+    int contador = 0;
+    Nodo *atual = lista->pFirst;
+    while (atual != NULL){
+        contador++;
+        atual = atual->prox;
+    }
+    return contador;
+}

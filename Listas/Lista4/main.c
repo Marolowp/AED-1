@@ -59,9 +59,15 @@ int main() {
     printf("\n");
 
     // 8. Liberar a memória alocada
+    
+    //Exercio 2
+    int quantidade = contar(minhaLista);
+    printf("Quantidade de elementos na lista: %d", quantidade);
+    
+    
     printf("--- LIBERANDO MEMORIA DA LISTA ---\n");
     liberaLista(minhaLista);
     printf("Memoria liberada com sucesso.\n");
-
+    
     return 0;
 }
