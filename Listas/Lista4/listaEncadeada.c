@@ -15,20 +15,26 @@ Head *criaLista(){
 
 int listaVazia(Head *lista){
     if (lista->pFirst == NULL){
-        return 0;
+        return 1;
     }
-    return 1;
+    return 0;
 }
 
 void inserirInicio(Head *lista, Dados dado){
+    if (!listaVazia(lista)){
+        Nodo *novo = malloc(sizeof(Dados));
+        lista->pFirst = novo;
+        novo->info = dado;
+        return;        
+    }
+    
     Nodo *novo = malloc(sizeof(Dados));
 
     if (novo == NULL){
         exit(1);
     }
 
-    novo->prox = lista->pFirst;
-    lista->pFirst = novo;
+    
 }
 
 void inserirFinal(Head *lista, Dados dado){
@@ -69,10 +75,29 @@ void liberaLista(Head *lista){
         printf("Lista Vazia");
         return;
     }
+
     Nodo *atual;
+
     while(lista->pFirst != NULL){
         atual = lista->pFirst;
         lista->pFirst = lista->pFirst->prox;   
         free(atual);
     }
+
+    free(lista);
+}
+
+int removerInicio(Head *lista){
+    if (lista->pFirst == NULL) return 0; //lista vazia
+
+    Nodo *remove = lista->pFirst;
+    lista->pFirst = lista->pFirst->prox;
+
+    free(remove);
+
+    return 1; //executado com exito
+}
+
+int removerFinal(Head *lista){
+    if (lista->pFirst == NULL) return 0; //lista Vazia
 }
