@@ -21,29 +21,25 @@ int listaVazia(Head *lista){
 }
 
 void inserirInicio(Head *lista, Dados dado){
-    if (!listaVazia(lista)){
-        Nodo *novo = malloc(sizeof(Dados));
-        lista->pFirst = novo;
+        Nodo *novo =(Nodo*)malloc(sizeof(Nodo));
+        if (novo == NULL){
+            printf("Falha na memoria");
+            return;
+        }
         novo->info = dado;
-        return;        
-    }
-    
-    Nodo *novo = malloc(sizeof(Dados));
-
-    if (novo == NULL){
-        exit(1);
-    }
-
-    
+        novo->prox = lista->pFirst;
+        lista->pFirst = novo;
 }
 
 void inserirFinal(Head *lista, Dados dado){
-    Nodo *novo = malloc(sizeof(Dados));
-
+    Nodo *novo = (Nodo *)malloc(sizeof(Nodo));
     if (novo == NULL){
+        printf("Falha na memoria");
         exit(1);
     }
 
+    novo->info = dado;
+    novo->prox = NULL;
     if (lista->pFirst == NULL){
         lista->pFirst = novo;
         return;
@@ -99,5 +95,39 @@ int removerInicio(Head *lista){
 }
 
 int removerFinal(Head *lista){
-    if (lista->pFirst == NULL) return 0; //lista Vazia
+    if (lista->pFirst == NULL) return 0; //Não foi possivel remover
+
+    if (lista->pFirst->prox == NULL){
+        free(lista->pFirst);
+        lista->pFirst = NULL;
+        return 1; //Foi possivel remover
+    }
+
+    Nodo *ant = lista->pFirst;
+    Nodo *remove = ant->prox;
+
+    while (remove->prox != NULL){
+        ant = remove;
+        remove = remove->prox; 
+    }
+
+    free(remove);
+    ant->prox = NULL;
+
+    return 1; 
+}
+
+int buscar(Head *lista, int cod, Dados *resultado){
+    if(listaVazia(lista)) return 0;
+    
+    Nodo *atual = lista->pFirst;
+
+    while (atual->info.cod != cod){
+        atual = atual->prox;
+        if (atual == NULL) return 0; //NAO ACHOU
+    }
+
+    *resultado = atual->info;
+
+    return 1;
 }

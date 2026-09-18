@@ -11,7 +11,7 @@ $(TARGET): $(OBJS)
 main.o: main.c listaEncadeada.h
 	$(CC) $(CFLAGS) -c main.c
 
-personagem.o: listaEncadeada.c listaEncadeada.h
+listaEncadeada.o: listaEncadeada.c listaEncadeada.h
 	$(CC) $(CFLAGS) -c listaEncadeada.c
 
 clean:
