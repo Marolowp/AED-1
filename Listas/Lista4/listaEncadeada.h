@@ -31,5 +31,7 @@ void liberaLista(Head *lista);
 int contar(Head *lista);
 //Exercicio 3
 int quantMaior(float valor, Head *lista);
+//Exercicio 4
+void removerCodigo(Head *lista);
 
 #endif

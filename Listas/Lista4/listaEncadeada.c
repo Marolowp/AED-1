@@ -155,3 +155,16 @@ int quantMaior(float valor, Head *lista){
     }
     return contador;
 }
+
+//Exercicio 4
+void removerCodigo(Head *lista, int cod){
+    Nodo *atual = lista->pFirst->prox;
+    Nodo *ant = lista->pFirst;
+    while(atual != NULL){
+        if (atual->info.cod == cod){
+            
+        }
+
+    }
+
+}
