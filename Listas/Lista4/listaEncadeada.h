@@ -29,5 +29,7 @@ void liberaLista(Head *lista);
 
 //Exercicio 2
 int contar(Head *lista);
+//Exercicio 3
+int quantMaior(float valor, Head *lista);
 
 #endif

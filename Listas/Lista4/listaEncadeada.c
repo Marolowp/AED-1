@@ -142,3 +142,16 @@ int contar(Head *lista){
     }
     return contador;
 }
+
+//Exercicio 3
+int quantMaior(float valor, Head *lista){
+    int contador = 0;
+    Nodo *atual = lista->pFirst;
+    while(atual != NULL){
+        if (atual->info.preco > valor){
+            contador++;
+        }
+        atual = atual->prox;
+    }
+    return contador;
+}

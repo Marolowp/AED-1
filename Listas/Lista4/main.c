@@ -17,7 +17,9 @@ int main() {
     Dados p2 = {102, "Mouse", 80.50f};
     Dados p3 = {103, "Monitor", 950.00f};
     Dados p4 = {104, "Fone", 120.00f};
-
+    Dados p5 = {105, "Headset", 110.00f};
+    Dados p6 = {106, "Lamparina", 50.00f};
+    
     // 3. Teste de inserção no início e no final
     printf("--- INSERINDO ELEMENTOS ---\n");
     inserirInicio(minhaLista, p2); // Lista: [102]
@@ -62,8 +64,13 @@ int main() {
     
     //Exercio 2
     int quantidade = contar(minhaLista);
-    printf("Quantidade de elementos na lista: %d", quantidade);
-    
+    printf("Quantidade de elementos na lista: %d\n", quantidade);
+    //Exercicio3
+    inserirFinal(minhaLista, p5);
+    inserirFinal(minhaLista, p6);
+
+    int quantidadeMaior = quantMaior(p5.preco,minhaLista);
+    printf("Quantidade de elementos mais caros que %.2f: %d\n",p5.preco, quantidadeMaior);
     
     printf("--- LIBERANDO MEMORIA DA LISTA ---\n");
     liberaLista(minhaLista);
