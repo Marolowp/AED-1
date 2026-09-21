@@ -65,12 +65,16 @@ int main() {
     //Exercio 2
     int quantidade = contar(minhaLista);
     printf("Quantidade de elementos na lista: %d\n", quantidade);
-    //Exercicio3
+    //Exercicio 3
     inserirFinal(minhaLista, p5);
     inserirFinal(minhaLista, p6);
 
     int quantidadeMaior = quantMaior(p5.preco,minhaLista);
     printf("Quantidade de elementos mais caros que %.2f: %d\n",p5.preco, quantidadeMaior);
+
+    //Exercicio 4
+    removerCodigo(minhaLista, 103);
+    imprimirLista(minhaLista);
     
     printf("--- LIBERANDO MEMORIA DA LISTA ---\n");
     liberaLista(minhaLista);

@@ -32,6 +32,6 @@ int contar(Head *lista);
 //Exercicio 3
 int quantMaior(float valor, Head *lista);
 //Exercicio 4
-void removerCodigo(Head *lista);
+void removerCodigo(Head *lista, int cod);
 
 #endif

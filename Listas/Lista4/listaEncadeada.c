@@ -162,9 +162,19 @@ void removerCodigo(Head *lista, int cod){
     Nodo *ant = lista->pFirst;
     while(atual != NULL){
         if (atual->info.cod == cod){
-            
+            Nodo *remover = atual;
+
+            if (ant == NULL){
+                lista->pFirst = atual->prox;
+            } else {
+                ant->prox = atual->prox;
+            }
+
+            atual = atual->prox;
+            free(remover);
+        } else {
+            ant = atual;
+            atual = atual->prox;
         }
-
     }
-
 }
