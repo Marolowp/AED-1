@@ -193,3 +193,23 @@ void inverterLista(Head *lista){
     }
     lista->pFirst = ant;
 }
+//Exercicio 6
+void inverterQuantFornecida(Head *lista, int valor){
+    if (lista->pFirst == NULL || lista->pFirst->prox == NULL) return;
+    if(valor <= 1) return;
+    int cont = valor;
+    Nodo *antigoInicio = lista->pFirst;
+    Nodo *atual = lista->pFirst;
+    Nodo *ant = NULL;
+    Nodo *next = NULL;
+    while(atual != NULL){
+        next = atual->prox;
+        atual->prox = ant;
+        ant = atual;
+        atual = next;
+        cont--;
+        if (cont == 0) break;
+    }
+    antigoInicio->prox = next;
+    lista->pFirst = ant;
+}

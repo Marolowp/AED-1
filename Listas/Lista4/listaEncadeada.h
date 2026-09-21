@@ -35,5 +35,7 @@ int quantMaior(float valor, Head *lista);
 void removerCodigo(Head *lista, int cod);
 //Exercicio 5
 void inverterLista(Head *lista);
+//Exercicio 6
+void inverterQuantFornecida(Head *lista, int valor);
 
 #endif

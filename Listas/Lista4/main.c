@@ -85,6 +85,11 @@ int main() {
     inverterLista(minhaLista);
     imprimirLista(minhaLista);
 
+    printf("\n--------------------------\n");
+    //Exercicio 6
+    inverterQuantFornecida(minhaLista, 3);
+    imprimirLista(minhaLista);
+    
     printf("--- LIBERANDO MEMORIA DA LISTA ---\n");
     liberaLista(minhaLista);
     printf("Memoria liberada com sucesso.\n");
