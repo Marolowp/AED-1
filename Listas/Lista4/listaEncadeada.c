@@ -178,3 +178,18 @@ void removerCodigo(Head *lista, int cod){
         }
     }
 }
+
+//Exercicio 5
+void inverterLista(Head *lista){
+    if (lista->pFirst == NULL || lista->pFirst->prox == NULL) return;
+    Nodo *atual = lista->pFirst;
+    Nodo *ant = NULL;
+    Nodo *next = NULL;
+    while (atual != NULL){
+        next = atual->prox;
+        atual->prox = ant;
+        ant = atual;
+        atual = next;
+    }
+    lista->pFirst = ant;
+}

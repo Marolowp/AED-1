@@ -19,6 +19,8 @@ int main() {
     Dados p4 = {104, "Fone", 120.00f};
     Dados p5 = {105, "Headset", 110.00f};
     Dados p6 = {106, "Lamparina", 50.00f};
+    Dados p7 = {107, "Carregado", 100.00f};
+    Dados p8 = {108, "Placa V", 400.00f};
     
     // 3. Teste de inserção no início e no final
     printf("--- INSERINDO ELEMENTOS ---\n");
@@ -75,7 +77,14 @@ int main() {
     //Exercicio 4
     removerCodigo(minhaLista, 103);
     imprimirLista(minhaLista);
-    
+    printf("\n--------------------------\n");
+
+    //Exercicio 5
+    inserirFinal(minhaLista, p7);
+    inserirFinal(minhaLista, p8);
+    inverterLista(minhaLista);
+    imprimirLista(minhaLista);
+
     printf("--- LIBERANDO MEMORIA DA LISTA ---\n");
     liberaLista(minhaLista);
     printf("Memoria liberada com sucesso.\n");
