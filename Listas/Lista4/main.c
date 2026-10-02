@@ -104,6 +104,18 @@ int main() {
     incorporaListas(minhaLista,minhaLista2);
     imprimirLista(minhaLista);
 
+    //Exercicio 8
+    removerFinal(minhaLista);
+    removerFinal(minhaLista);
+    removerFinal(minhaLista);
+    removerFinal(minhaLista);
+    printf("\n--------------------------\n");
+    inserirInicio(minhaLista2, d4);
+    inserirInicio(minhaLista2, d3);
+    inserirInicio(minhaLista2, d2);
+    inserirInicio(minhaLista2, d1);
+    intercalaListas(minhaLista, minhaLista2);
+    imprimirLista(minhaLista);
 
     printf("--- LIBERANDO MEMORIA DA LISTA ---\n");
     liberaLista(minhaLista);

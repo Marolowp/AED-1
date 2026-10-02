@@ -39,4 +39,7 @@ void inverterLista(Head *lista);
 void inverterQuantFornecida(Head *lista, int valor);
 //Exercicio 7
 void incorporaListas(Head *lista1, Head *lista2);
+//Exercicio 8
+void intercalaListas(Head *lista1, Head *lista2);
+
 #endif

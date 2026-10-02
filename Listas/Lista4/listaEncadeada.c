@@ -224,3 +224,26 @@ void incorporaListas(Head *lista1, Head *lista2){
     atual1->prox = lista2->pFirst;    
     lista2->pFirst = NULL;
 }
+
+void intercalaListas(Head *lista1, Head *lista2){
+    if(lista1->pFirst == NULL || lista2->pFirst == NULL) return;
+    Nodo *atual1 = lista1->pFirst;
+    Nodo *atual2 = lista2->pFirst;
+    Nodo *temp1 = NULL;
+    Nodo *temp2 = NULL;
+    while (1){
+        if (atual2 != NULL && atual2 != NULL){
+            temp1 = atual1->prox;
+            temp2 = atual2->prox;
+            atual1->prox = atual2;
+            atual2->prox = temp1;
+            atual1 = temp1;
+            atual2 = temp2; 
+        }
+        else{
+            break;
+        }
+    }
+    lista1->pFirst = lista1->pFirst;
+    lista2->pFirst = NULL;
+}
