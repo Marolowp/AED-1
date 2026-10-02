@@ -37,5 +37,6 @@ void removerCodigo(Head *lista, int cod);
 void inverterLista(Head *lista);
 //Exercicio 6
 void inverterQuantFornecida(Head *lista, int valor);
-
+//Exercicio 7
+void incorporaListas(Head *lista1, Head *lista2);
 #endif

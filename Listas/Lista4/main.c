@@ -1,11 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "listaEncadeada.h"
 
 int main() {
     // 1. Criar a lista
     Head *minhaLista = criaLista();
+    Head *minhaLista2 = criaLista();
 
     // 2. Verificar se está vazia
     if (listaVazia(minhaLista)) {
@@ -21,7 +20,17 @@ int main() {
     Dados p6 = {106, "Lamparina", 50.00f};
     Dados p7 = {107, "Carregado", 100.00f};
     Dados p8 = {108, "Placa V", 400.00f};
+
+    Dados d1= {10, "Tenis", 690.00f};
+    Dados d2 = {11, "Chinelo", 99.00f};
+    Dados d3 = {12, "Sapato", 300.00f};
+    Dados d4 = {13, "Sandalia", 50.00f};
     
+    inserirInicio(minhaLista2, d4);
+    inserirInicio(minhaLista2, d3);
+    inserirInicio(minhaLista2, d2);
+    inserirInicio(minhaLista2, d1);
+
     // 3. Teste de inserção no início e no final
     printf("--- INSERINDO ELEMENTOS ---\n");
     inserirInicio(minhaLista, p2); // Lista: [102]
@@ -87,12 +96,22 @@ int main() {
 
     printf("\n--------------------------\n");
     //Exercicio 6
-    inverterQuantFornecida(minhaLista, 3);
+    inverterQuantFornecida(minhaLista, 2);
     imprimirLista(minhaLista);
-    
+
+    //Exercicio 7
+    printf("\n--------------------------\n");
+    incorporaListas(minhaLista,minhaLista2);
+    imprimirLista(minhaLista);
+
+
     printf("--- LIBERANDO MEMORIA DA LISTA ---\n");
     liberaLista(minhaLista);
     printf("Memoria liberada com sucesso.\n");
+
+    printf("\n--------------------------\n");
+
+    
     
     return 0;
 }

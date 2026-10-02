@@ -213,3 +213,14 @@ void inverterQuantFornecida(Head *lista, int valor){
     antigoInicio->prox = next;
     lista->pFirst = ant;
 }
+
+void incorporaListas(Head *lista1, Head *lista2){
+    if(lista1->pFirst == NULL || lista2->pFirst == NULL) return;
+    Nodo *atual1 = lista1->pFirst;
+    
+    while (atual1->prox != NULL){
+        atual1 = atual1->prox;
+    }
+    atual1->prox = lista2->pFirst;    
+    lista2->pFirst = NULL;
+}
