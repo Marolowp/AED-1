@@ -135,8 +135,11 @@ int main() {
     imprimirLista(exemplo);
     printf("\nlista 2:\n");
     imprimirLista(minhaLista);
-
-
+    
+    //Exercicio 11
+    printf("\n--------------------------\n");
+    removePar(exemplo);
+    imprimirLista(exemplo);
     printf("--- LIBERANDO MEMORIA DA LISTA ---\n");
     liberaLista(minhaLista);
     liberaLista(par);

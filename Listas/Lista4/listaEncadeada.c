@@ -269,6 +269,7 @@ void separaParidade(Head *lista, Head *par, Head *impar){
     
 
 }
+
 //Exercicio 10
 void copiaLista(Head *lista1, Head *lista2){
     if(lista1->pFirst == NULL || lista2->pFirst != NULL) return;
@@ -276,5 +277,32 @@ void copiaLista(Head *lista1, Head *lista2){
     while (atual1 != NULL){
         inserirFinal(lista2, atual1->info);
         atual1 = atual1->prox;
+    }
+}
+//Exercicio 11
+void removePar(Head *lista){
+    if (lista->pFirst == NULL) return;
+    Nodo *atual = lista->pFirst;
+    Nodo *ant = NULL;
+    
+    while (atual != NULL){
+        if (atual->info.cod % 2 == 0){
+            if (ant == NULL){
+                Nodo *temp = atual;
+                lista->pFirst = atual->prox;
+                free(temp);
+                atual = lista->pFirst;
+            }
+            else{
+                Nodo *temp = atual;
+                ant->prox = atual->prox;
+                free(temp);
+                atual = ant->prox;
+            }
+        }
+        else{
+            ant = atual;
+            atual = atual->prox;
+        }
     }
 }
