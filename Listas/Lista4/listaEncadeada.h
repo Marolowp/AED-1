@@ -41,5 +41,7 @@ void inverterQuantFornecida(Head *lista, int valor);
 void incorporaListas(Head *lista1, Head *lista2);
 //Exercicio 8
 void intercalaListas(Head *lista1, Head *lista2);
+//Exercicio 9
+void separaParidade(Head *lista, Head *par, Head *impar);
 
 #endif

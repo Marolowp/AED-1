@@ -247,3 +247,25 @@ void intercalaListas(Head *lista1, Head *lista2){
     lista1->pFirst = lista1->pFirst;
     lista2->pFirst = NULL;
 }
+
+//Exercicio 9
+void separaParidade(Head *lista, Head *par, Head *impar){
+    if (lista->pFirst == NULL) return;
+    Nodo *atual = lista->pFirst;
+    //Nodo *refPar = par->pFirst;
+    //Nodo *refImpar = impar->pFirst; 
+
+    int counter = 1;
+    while(atual != NULL){
+        if (counter % 2 == 0){
+            inserirFinal(par, atual->info);
+        }
+        else if (counter % 2 != 0){
+            inserirFinal(impar, atual->info);
+        }
+        atual = atual->prox;
+        counter++;
+    }
+    
+
+}
