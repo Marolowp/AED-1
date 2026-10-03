@@ -269,3 +269,12 @@ void separaParidade(Head *lista, Head *par, Head *impar){
     
 
 }
+//Exercicio 10
+void copiaLista(Head *lista1, Head *lista2){
+    if(lista1->pFirst == NULL || lista2->pFirst != NULL) return;
+    Nodo *atual1 = lista1->pFirst; 
+    while (atual1 != NULL){
+        inserirFinal(lista2, atual1->info);
+        atual1 = atual1->prox;
+    }
+}

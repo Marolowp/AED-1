@@ -117,7 +117,7 @@ int main() {
     intercalaListas(minhaLista, minhaLista2);
     imprimirLista(minhaLista);
 
-    //Exercicio9
+    //Exercicio 9
     printf("\n--------------------------\n");
     Head *par = criaLista();
     Head *impar = criaLista();
@@ -126,8 +126,22 @@ int main() {
     imprimirLista(par);
     printf("\n--------------------------\n");
     imprimirLista(impar);
+
+    //Exercicio 10
+    printf("\n--------------------------\n");
+    Head *exemplo = criaLista();
+    copiaLista(minhaLista, exemplo);
+    printf("\nlista 1:\n");
+    imprimirLista(exemplo);
+    printf("\nlista 2:\n");
+    imprimirLista(minhaLista);
+
+
     printf("--- LIBERANDO MEMORIA DA LISTA ---\n");
     liberaLista(minhaLista);
+    liberaLista(par);
+    liberaLista(impar);
+    liberaLista(minhaLista2);
     printf("Memoria liberada com sucesso.\n");
 
     printf("\n--------------------------\n");

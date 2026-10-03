@@ -43,5 +43,7 @@ void incorporaListas(Head *lista1, Head *lista2);
 void intercalaListas(Head *lista1, Head *lista2);
 //Exercicio 9
 void separaParidade(Head *lista, Head *par, Head *impar);
+//Exercicio 10
+void copiaLista(Head *lista1, Head *lista2);
 
 #endif
