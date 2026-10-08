@@ -26,6 +26,7 @@ void liberaLista(Head *lista); //Da free na lista inteira
 void contElementos(Head *lista); //Conta quantos elementos tem na lista
 void contElementosMaior(Head *lista, int valor); //Conta quantos elementos são maiores que o valor fornecido
 void removeElementosIguais (Head *lista, int valor); //Remove elementos iguais da lista
+void inverterLista(Head *lista);
 
 int main(){
     printf("Exercicio 1:\n");
@@ -240,3 +241,17 @@ void removeElementosIguais(Head *lista, int valor){
     }
 }
 
+void inverterLista(Head *lista){
+    if (lista->pFirst == NULL || lista->pFirst->prox == NULL) return;
+    Nodo *atual = lista->pFirst;
+    Nodo *anterior = NULL;
+    Nodo *proximo = NULL;
+
+    while (atual != NULL){
+        proximo = atual->prox;
+        atual->prox = anterior;
+        anterior = atual;
+        atual = proximo;
+    }
+    lista->pFirst = anterior;
+}
