@@ -21,12 +21,13 @@ int main() {
 
     print(&pilha);
 
-    printf("\n\n");
+    printf("\n");
 
     printInvertido(&pilha);
     // Testa pop()
     Elem removido;
-
+    
+    top(&pilha);
     removido = pop(&pilha);
     printf("Elemento removido: %c\n", removido.carac);
 
