@@ -43,3 +43,37 @@ int empty(Pilha *pilha){
     }
     return 0;
 }
+
+int size(Pilha *pilha){
+    return pilha->quantidade;
+}
+
+void clear(Pilha *pilha){
+    while (!empty(pilha)){
+        pop(pilha);
+    }
+}
+void top(Pilha *pilha){
+    if (empty(pilha)) return;
+    printf("O elemento do topo é: %c\n", pilha->topo->elem.carac);
+}
+
+void print(Pilha *pilha){
+    Pilha copia;
+    Elem elem;
+
+    reset(&copia);
+
+    while(!empty(pilha)){
+        elem = pilha->topo->elem;
+        printf("Char: %c\n", elem.carac);
+        pop(pilha);
+        push(&copia, elem);
+    }
+
+    while(!empty(&copia)){
+        pop(&copia);
+        push(pilha, elem);
+    }
+
+}
