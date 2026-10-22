@@ -23,5 +23,6 @@ Elem pop(Pilha *pilha);
 void top(Pilha *pilha);
 void clear(Pilha *pilha);
 void print(Pilha *pilha);
+void imprimeInvertido(Pilha *pilha);
 
 #endif

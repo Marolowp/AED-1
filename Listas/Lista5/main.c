@@ -20,6 +20,10 @@ int main() {
     top(&pilha);
 
     print(&pilha);
+
+    printf("\n\n");
+
+    printInvertido(&pilha);
     // Testa pop()
     Elem removido;
 

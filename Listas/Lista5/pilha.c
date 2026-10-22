@@ -28,9 +28,9 @@ Elem pop(Pilha *pilha){
     }
     
     remove = pilha->topo;
-    pilha->topo = remove->prox;
-    
     Elem caracter = remove->elem; 
+  
+    pilha->topo = remove->prox;  
     free(remove);
 
     pilha->quantidade--;
@@ -65,15 +65,33 @@ void print(Pilha *pilha){
     reset(&copia);
 
     while(!empty(pilha)){
-        elem = pilha->topo->elem;
-        printf("Char: %c\n", elem.carac);
-        pop(pilha);
+        elem = pop(pilha);
         push(&copia, elem);
     }
 
     while(!empty(&copia)){
-        pop(&copia);
+        elem = pop(&copia);
+        printf("Char: %c\n", elem.carac);
         push(pilha, elem);
     }
+}
+
+void printInvertido(Pilha *pilha){
+    Pilha copia;
+    Elem elem;
+
+    reset(&copia);
+
+    while(!empty(pilha)){
+        elem = pop(pilha);
+        printf("%c", elem.carac);
+        push(&copia, elem);
+    }
+
+    while(!empty(&copia)){
+        elem = pop(&copia);
+        push(pilha, elem);
+    }
+    printf("\n\n");
 
 }
