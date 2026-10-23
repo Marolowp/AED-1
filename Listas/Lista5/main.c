@@ -50,6 +50,11 @@ int main() {
     
     char palavra[10] = "radar";
     palindromo(palavra);
+    
+    printf("\n");
+
+    char expressao[20] = "(3 + 5) * (7 - 2))";
+    isBalanced(expressao);
     // Testa pop()
     Elem removido;
 

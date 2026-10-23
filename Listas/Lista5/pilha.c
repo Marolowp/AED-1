@@ -122,3 +122,36 @@ void palindromo(char *palavra){
        printf("É palindromo\n");
     }
 }
+
+void isBalanced(char *expressao){
+    Pilha copia;
+    Elem elem;
+
+    reset(&copia);
+
+    int i = 0;
+    while(expressao[i] != '\0'){
+        if(expressao[i] == '(' ||
+           expressao[i] == '['||
+           expressao[i] == '{'){
+            elem.carac = expressao[i];
+            push(&copia, elem);
+        }
+        if ((expressao[i] == ')' || expressao[i] == ']' || expressao[i] == '}') && empty(&copia)){
+            printf("A expressão está nao corretamente balanceada.\n");
+            return;
+        }
+        if((expressao[i] == ')' && copia.topo->elem.carac == '(' ) ||
+            (expressao[i] == ']' && copia.topo->elem.carac == '[' ) ||
+            (expressao[i] == '}' && copia.topo->elem.carac == '{' ) ){
+            elem = pop(&copia);
+        }
+        i++;
+    }
+    if(empty(&copia)){
+        printf("A expressão está corretamente balanceada.\n");
+        return;
+    }
+    printf("A expressão está nao corretamente balanceada.\n");
+
+}
