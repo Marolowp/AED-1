@@ -27,6 +27,7 @@ int main() {
     push(&pilha, t);
     push(&pilha, u);
     push(&pilha, r);
+    push(&pilha, a);
     push(&pilha, vazio);
     push(&pilha, d);
     push(&pilha, e);
@@ -46,6 +47,9 @@ int main() {
     printf("\n");
 
     printInvertido(&pilha);
+    
+    char palavra[10] = "radar";
+    palindromo(palavra);
     // Testa pop()
     Elem removido;
 
@@ -70,7 +74,6 @@ int main() {
     printf("Pilha vazia? %d\n", empty(&pilha));
 
     reset(&pilha);
-    
 
     return 0;
 } 

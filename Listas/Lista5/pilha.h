@@ -24,5 +24,6 @@ void top(Pilha *pilha);
 void clear(Pilha *pilha);
 void print(Pilha *pilha);
 void printInvertido(Pilha *pilha);
+void palindromo(char *palavra);
 
 #endif

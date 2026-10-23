@@ -71,7 +71,7 @@ void print(Pilha *pilha){
 
     while(!empty(&copia)){
         elem = pop(&copia);
-        printf("Char: %c\n", elem.carac);
+        printf("%c", elem.carac);
         push(pilha, elem);
     }
 }
@@ -93,5 +93,32 @@ void printInvertido(Pilha *pilha){
         push(pilha, elem);
     }
     printf("\n\n");
+}
 
+void palindromo(char *palavra){
+    Pilha copia;
+    Elem elem;
+    
+    reset(&copia);
+    
+    int i = 0;
+    while(palavra[i] != '\0'){
+        elem.carac = palavra[i];
+        push(&copia, elem);
+        i++;
+    }
+
+    i = 0;
+    while(!empty(&copia)){
+        elem = pop(&copia);
+        if(palavra[i] != elem.carac){
+            printf("Não é palindromo\n");
+            break;
+        }
+        i++;
+    }
+
+    if(empty(&copia)){
+       printf("É palindromo\n");
+    }
 }
