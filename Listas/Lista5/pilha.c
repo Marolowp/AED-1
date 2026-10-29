@@ -138,7 +138,7 @@ void isBalanced(char *expressao){
             push(&copia, elem);
         }
         if ((expressao[i] == ')' || expressao[i] == ']' || expressao[i] == '}') && empty(&copia)){
-            printf("A expressão está nao corretamente balanceada.\n");
+            printf("A expressão nao está corretamente balanceada.\n");
             return;
         }
         if((expressao[i] == ')' && copia.topo->elem.carac == '(' ) ||
@@ -153,5 +153,26 @@ void isBalanced(char *expressao){
         return;
     }
     printf("A expressão está nao corretamente balanceada.\n");
+}
 
+void removeRepeated(char *word){
+    Pilha pilha;
+    Elem elem;
+
+    reset(&pilha);
+
+    //implementa word na pilha
+    int i = 0;
+    elem.carac = word[i];
+    push(&pilha, elem);
+
+    while(word[i] != '\0'){
+        elem.carac = word[i];
+        if(pilha.topo->elem.carac != elem.carac){
+            push(&pilha, elem);
+        }
+        i++;
+    }
+
+    print(&pilha);
 }

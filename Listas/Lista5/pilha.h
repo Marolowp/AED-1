@@ -26,5 +26,6 @@ void print(Pilha *pilha);
 void printInvertido(Pilha *pilha);
 void palindromo(char *palavra);
 void isBalanced(char *expressao);
+void removeRepeated(char *word);
 
 #endif

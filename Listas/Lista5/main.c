@@ -55,6 +55,23 @@ int main() {
 
     char expressao[20] = "(3 + 5) * (7 - 2))";
     isBalanced(expressao);
+
+    printf("\n");
+
+    char word[20] = "AAABBBCCDAA";
+    printf("palavra antes: ");
+    for(int i = 0; word[i] != '\0'; i++){
+        printf("%c", word[i]);
+    }
+
+    printf("\n");
+
+    
+    printf("palavra depois: ");
+    removeRepeated(word);
+    
+    printf("\n");
+
     // Testa pop()
     Elem removido;
 
