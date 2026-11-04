@@ -59,6 +59,7 @@ int main() {
     printf("\n");
 
     char word[20] = "AAABBBCCDAA";
+    
     printf("palavra antes: ");
     for(int i = 0; word[i] != '\0'; i++){
         printf("%c", word[i]);
@@ -71,6 +72,27 @@ int main() {
     removeRepeated(word);
     
     printf("\n");
+
+    printf("Palavra antes: ");
+    print(&pilha);
+    printf("\n");
+
+    remover(&pilha, 'E');
+
+    printf("palavra depois: ");
+    print(&pilha);
+    printf("\n");
+
+    char palavra2[20] = "Estrutura de dados";
+
+    printf("Palavra antes: ");
+    for(int i = 0; palavra2[i] != '\0'; i++){
+        printf("%c", palavra2[i]);
+    }
+    printf("\n");
+    printf("palavra depois: ");
+    invertePalavras(palavra2);
+
 
     // Testa pop()
     Elem removido;

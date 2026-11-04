@@ -176,3 +176,51 @@ void removeRepeated(char *word){
 
     print(&pilha);
 }
+
+void remover(Pilha *pilha, char caracter) {
+    Pilha auxiliar;
+    Elem elem;
+
+    reset(&auxiliar);
+
+    while (!empty(pilha)) {
+        elem = pop(pilha);
+
+        if (elem.carac != caracter) {
+            push(&auxiliar, elem);
+        }
+    }
+
+    while (!empty(&auxiliar)) {
+        elem = pop(&auxiliar);
+        push(pilha, elem);
+    }
+}
+
+void invertePalavras(char *palavra){
+    Pilha auxiliar;
+    Elem elem;
+
+    reset(&auxiliar);
+
+    int i = 0;
+    while(palavra[i] != '\0'){
+        if(palavra[i] != ' '){
+            elem.carac = palavra[i];
+            push(&auxiliar, elem);
+        }
+        else{
+            while(!empty(&auxiliar)){
+                elem = pop(&auxiliar);
+                printf("%c", elem.carac);
+            }
+            printf(" ");
+        }
+        i++;
+    }
+    while(!empty(&auxiliar)){
+        elem = pop(&auxiliar);
+        printf("%c", elem.carac);
+    }
+    printf("\n");
+}
